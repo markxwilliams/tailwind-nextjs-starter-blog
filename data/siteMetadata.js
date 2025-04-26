@@ -82,7 +82,7 @@ const siteMetadata = {
      // themeURL: '',
       // This corresponds to the `data-lang="en"` in giscus's configurations
     //  lang: 'en',
-    },
+   // },
   },
   search: {
     provider: 'kbar', // kbar or algolia
