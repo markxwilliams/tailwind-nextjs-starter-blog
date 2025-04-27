@@ -39,7 +39,7 @@ const siteMetadata = {
     plausibleAnalytics: {
        plausibleDataDomain: 'williams.ms', // e.g. tailwind-nextjs-starter-blog.vercel.app
     // If you are hosting your own Plausible.
-    //   src: '', // e.g. https://plausible.my-domain.com/js/script.js
+    src: 'https://williams.ms/js/script.js', // e.g. https://williams.ms/js/script.js
     },
     // simpleAnalytics: {},
     // posthogAnalytics: {
