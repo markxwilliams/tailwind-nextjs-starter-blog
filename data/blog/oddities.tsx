@@ -2,7 +2,7 @@
 title: 'Oddities in the Australian Cyber Security Industry'
 date: '2025-05-03'
 lastmod: '2025-05-03'
-tags: ['cyber security']
+tags: ['general']
 draft: false
 summary: 'Oddities in the Australian Cyber Security Industry'
 images: ['/static/images/twitter-card.png']
@@ -12,7 +12,7 @@ images: ['/static/images/twitter-card.png']
 
 I've worked in the Australian cyber security industry since 2016. It's not without its oddities. 
 
-## "Australian Experience" 
+## Australian Experience
 
 When I first moved to Australia, multiple recruiters asked me the same question: "Do you have experience in Australia?". Despite having then 11 years' expeience in cyber security -- in New Zealand, the UK, and Germany -- this was a question that I was seriously asked. 
 
