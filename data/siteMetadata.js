@@ -1,6 +1,6 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: `Mark Williams' thoughts on cyber security and privacy`,
+  title: 'Thoughts on cyber security and privacy',
   author: 'Mark Williams',
   headerTitle: 'Mark Williams',
   description: 'A Next.js blog by Mark Williams',
