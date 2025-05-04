@@ -12,8 +12,9 @@ images:
 
 # Overview
 
-CIAM offers cyber security professionals a unique challenge: In which other area  in cyber security does one have a chance to protect customers' data whilst challenging oneself with near endless complexity? Many other areas of cyber security – e.g., endpoint security, cloud security, threat and vulnerability management – are internally focused within an IT department. CIAM is externally focused on customers; specifically, how to securely identify, authenticate, and authorise customers, and hence there is a more direct impact to a improving an organisation's cyber security. 
-Likewise, as more organisations move services online, customers must register and log in to access these services. 
+CIAM offers cyber security professionals a unique challenge: In which other area  in cyber security does one have a chance to protect customers' data whilst challenging oneself with near endless complexity? 
+
+Many other areas of cyber security – e.g., endpoint security, cloud security, threat and vulnerability management – are internally focused within an IT department. CIAM is externally focused on customers; specifically, how to securely identify, authenticate, and authorise customers, and hence there is a more direct impact to a improving an organisation's cyber security. Likewise, as more organisations move services online, customers must register and log in to access these services. 
 
 CIAM and IAM are different challenges with different characteristics. IAM is B2E users (i.e., internal employees) and B2B users (i.e., business partners), and CIAM is B2C users (i.e., customers or members).
 CIAM tends to be more complex due to the number of users and hence scale required, multiple accounts for a single user, the requirement to support older devices, and the need to make user registration and authentication seamless not to scare away potential customers. CIAM is also about choice. Customers choose to interact with organisations, including choosing which subscription to use, additional MFA factors to enroll, when to close their account, etc.
@@ -33,55 +34,55 @@ CIAM tends to be more complex due to the number of users and hence scale require
 ### Identity Verification
 - CIAM: Can require ID checks for signup or profile updates (e.g., correcting contact details to enable login).
 - IAM: Employees verified pre-employment. Account resets verified via managers or HR.
-Frequency of Sign In
+### Frequency of Sign In
 - CIAM: Ranges from daily to once a decade.
 - IAM: Usually daily.
-Device / Client
+### Device / Client
 - CIAM: Unmanaged customer devices (e.g., mobiles, browsers), often on older OS. Passkeys need iOS16+ or Android 9+.
 - IAM: B2E: Organisation-managed devices. B2B: Partner-managed devices.
-User Registration / Sign Up
+### User Registration / Sign Up
 - CIAM: Online signup or digital channel activation.
 - IAM: Onboarding upon joining or as needed.
-User Deregistration / Account Closure
+### User Deregistration / Account Closure
 - CIAM: Users can close accounts.
 - IAM: Accounts closed when users leave.
-Number of Accounts
+### Number of Accounts
 - CIAM: One or multiple (e.g., separate banking and trading accounts).
 - IAM: One account per user, except IT admins.
-User Provisioning
+### User Provisioning
 - CIAM: Provisioned at registration or digital channel activation, with details in a user directory and IdP.
 - IAM: B2E: Created in HR systems during onboarding, ideally via IGA to directories like Entra ID. B2B: Created via requests (e.g., ServiceNow) or integrations.
-Identification
+### Identification
 - CIAM: Self-chosen username, email, or customer ID, with automated retrieval if forgotten.
 - IAM: Organisation-issued username, except for IT admins.
-User Directory
+### User Directory
 - CIAM: Loosely coupled with authentication. Digital channel activation may provision IdP accounts. Integrations (LDAP, APIs, CSV) update details.
 - IAM: Tightly coupled directories (e.g., Entra ID). B2B may federate with partner IdPs.
-Authentication Standards
+### Authentication Standards
 - CIAM: OIDC on OAuth2 for API-based architectures.
 - IAM: OIDC, SAMLv2, LDAP, or local authentication.
-Authentication Factors
+### Authentication Factors
 - CIAM: Social login, passwords, OTPs, voice calls, security questions, passkeys. Flexible with risk/adaptive and step-up authentication. Browsers can be “trusted”.
 - IAM: Passwords, passkeys, certificates, smartcards. Risk/adaptive authentication with device threat data (e.g., EDR). Restricted to specific locations or compliant devices.
-Birthright Access
+### Birthright Access
 - CIAM: Based on subscription choice.
 - IAM: Mandated by employment type (e.g., employees access performance sites, contractors do not).
-MFA Factors
+### MFA Factors
 - CIAM: OTPs, passkeys, authenticator apps (e.g., Google, MS), or custom apps. User choice available.
 - IAM: Passkeys and authenticator apps, mandated by IT.
-Authorisation Standards
+### Authorisation Standards
 - CIAM: OAuth2.
 - IAM: OAuth2.
-Authorisation Approach
-- CIAM: RBAC, ABAC, ReBAC.
+### Authorisation Approach
+- CIAM: RBAC, ABAC, ReBAC. CIAM may include far more complex relationship between customers. For example, internal staff may also be customers. Customers may have relationships with other customers (e.g., opening an account for a minor, power of attorney over an account). 
 - IAM: RBAC, ABAC, MAC.
-Credential Reset
+### Credential Reset
 - CIAM: Self-service reset via security questions, OTPs, or ID submission to reduce call centre load. Call centres also available.
 - IAM: Self-service reset with IT helpdesk support.
-User Access Reviews
+### User Access Reviews
 - CIAM: Not applicable.
 - IAM: Via IGA tools or manually.
-PAM
+### PAM
 - CIAM: Not part of CIAM.
 - IAM: May include Privileged Access Management.
 
