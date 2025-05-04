@@ -12,12 +12,6 @@ const projectsData: Project[] = [
     imgSrc: '/static/images/securemess.png',
     href: 'https://securemessagingapps.com',
   },
-  {
-    title: 'CIAM Blog',
-    description: `A blog about customer identity and access management.`,
-    imgSrc: '/static/images/ciam.png',
-    href: 'https://ciamblog.net',
-  },
 ]
 
 export default projectsData
