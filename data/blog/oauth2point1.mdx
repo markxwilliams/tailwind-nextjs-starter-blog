@@ -15,7 +15,7 @@ images:
 The OAuth2.1 RFC is a draft. The draft includes the following changes from OAuth2:
 
 - PKCE is required for both public and confidential clients when using an authorization code grant.  
-- The implicit grant and resource owner grant were removed.  
+- The implicit grant and resource owner password grant were removed. [Scott Brady](https://www.scottbrady.io/oauth/why-the-resource-owner-password-credentials-grant-type-is-not-authentication-nor-suitable-for-modern-applications) gives the best explanation I've seen as to why ROPG shouldn't be used. 
 - The definitions of public and confidential clients have been simplified: Clients that have credentials with the authorization server are designated as “confidential clients”. Clients without credentials are called “public clients”.  
 - Redirect URIs must be compared using exact string matching as per Section 4.1.3 of OAuth 2.0 Security Best Current Practices.  
 - Bearer token usage omits the use of bearer tokens in the query string of URIs as per Section 4.3.2 of OAuth 2.0 Security Best Current Practices.  
