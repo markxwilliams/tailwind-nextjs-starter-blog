@@ -99,6 +99,14 @@ module.exports = () => {
           source: '/api/event',
           destination: 'https://plausible.io/api/event',
         },
+        {
+          source: '/send/script.js',
+          destination: 'https://cloud.umami.is/script.js',
+        },
+        {
+          source: '/send/event',
+          destination: 'https://cloud.umami.is/api/send',
+        },
       ]
     },
     webpack: (config, options) => {
