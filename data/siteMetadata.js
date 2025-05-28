@@ -37,12 +37,12 @@ const siteMetadata = {
       src: 'https://williams.ms/send/script.js',
       // Remember to add 'us.umami.is' in `next.config.js` as a permitted domain for the CSP
     },
-    plausibleAnalytics: {
-       plausibleDataDomain: 'williams.ms', // e.g. tailwind-nextjs-starter-blog.vercel.app
+    //plausibleAnalytics: {
+      // plausibleDataDomain: 'williams.ms', // e.g. tailwind-nextjs-starter-blog.vercel.app
     // If you are hosting your own Plausible.
     //src: 'https://williams.ms/public/js/script.js', // e.g. https://williams.ms/js/script.js
-      src: 'https://williams.ms/js/script.js',
-    },
+      //src: 'https://williams.ms/js/script.js',
+    //},
     // simpleAnalytics: {},
     // posthogAnalytics: {
     //   posthogProjectApiKey: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
