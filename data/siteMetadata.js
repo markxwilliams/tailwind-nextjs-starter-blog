@@ -6,7 +6,7 @@ const siteMetadata = {
   description: 'A Next.js blog by Mark Williams',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://williams.ms',
+  siteUrl: 'https://mwilliams.net',
   siteRepo: 'https://github.com/markxwilliams/tailwind-nextjs-starter-blog',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
@@ -34,7 +34,7 @@ const siteMetadata = {
       umamiWebsiteId: process.env.NEXT_UMAMI_ID,
       // You may also need to overwrite the script if you're storing data in the US - ex:
       // src: 'https://us.umami.is/script.js'
-      src: 'https://williams.ms/send/script.js',
+      src: 'https://mwilliams.net/send/script.js',
       // Remember to add 'us.umami.is' in `next.config.js` as a permitted domain for the CSP
     },
     //plausibleAnalytics: {
