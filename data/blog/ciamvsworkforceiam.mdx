@@ -21,8 +21,8 @@ CIAM tends to be more complex due to the number of users and hence scale require
 
 | **Aspect**                     | **CIAM**                                                                 | **IAM**                                                                 |
 |--------------------------------|--------------------------------------------------------------------------|------------------------------------------------------------------------|
-| **Who's Responsible?**         | Product teams, digital teams, often outside cyber security/architecture.  | Cyber security, IT operations, architecture.                            |
-| **User Type**                  | External users (customers, members) who choose to engage, close accounts, or select subscriptions. | Internal users (B2E: employees, contractors, vendors, board members). External users (B2B: business partners like vendors). |
+| **Who's Responsible**         | Product teams, digital teams, often outside IT/ cyber security/architecture.  | Cyber security, IT operations, architecture.                            |
+| **User Type**                  | External users (customers, members) who choose to engage, close accounts, or select subscriptions. | Internal users (B2E: employees, contractors, vendors, board members). External users (B2B: business partners such as vendors). |
 | **User Size**                  | Scales to billions (e.g., Google).                                       | Limited to employees plus onboarded partner accounts.                   |
 | **Regulations**                | May require ID verification or MFA (e.g., APRA’s MFA letter).            | Typically unregulated.                                                  |
 | **Identity Verification**      | ID checks for signup/profile updates (e.g., correcting contact details). | Employees verified pre-employment. Account resets via managers/HR.     |
@@ -31,7 +31,7 @@ CIAM tends to be more complex due to the number of users and hence scale require
 | **User Registration / Sign Up**| Online signup or digital channel activation.                             | Onboarding upon joining or as needed.                                  |
 | **User Deregistration / Account Closure** | Users can close accounts.                                      | Accounts closed when users leave.                                      |
 | **Number of Accounts**         | One or multiple (e.g., separate banking and trading accounts).           | One account per user, except IT admins.                                |
-| **User Provisioning**          | Provisioned at registration/digital channel activation, with details in user directory and IdP. | B2E: Created in HR systems during onboarding, ideally via IGA to directories like Entra ID. B2B: Created via requests (e.g., ServiceNow) or integrations. |
+| **User Provisioning**          | Provisioned at registration/digital channel activation, with details in user directory and IdP. | B2E: Created in HR systems during onboarding, ideally via IGA to directories such as Entra ID. B2B: Created via requests (e.g., ServiceNow) or integrations. |
 | **Identification**             | Self-chosen username, email, or customer ID, with automated retrieval.   | Organisation-issued username, except for IT admins.                     |
 | **User Directory**             | Loosely coupled with authentication. Digital channel activation may provision IdP accounts. Integrations (LDAP, APIs, CSV) update details. | Tightly coupled directories (e.g., Entra ID). B2B may federate with partner IdPs. |
 | **Authentication Standards**   | OIDC on OAuth2 for API-based architectures.                              | OIDC, SAMLv2, LDAP, or local authentication.                            |
