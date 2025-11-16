@@ -9,7 +9,7 @@ const siteMetadata = {
   siteUrl: 'https://mwilliams.net',
   siteRepo: 'https://github.com/markxwilliams/tailwind-nextjs-starter-blog',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
+  //socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   //mastodon: 'https://mastodon.social/@mastodonuser',
   //email: 'address@yoursite.com',
   //github: 'https://github.com',
