@@ -26,7 +26,7 @@ Typically changing a customer's phone number requires APIs and integration with 
 
 Many IdPs -- e.g., Okta, Auth0 -- will require that the phone number is in the E.164 format. Your CRM should also include data integrity rules around the length and composition of the phone number. Likewise, some IdPs will even reject a phone number being added to a customer's profile is the phone number is not in an allocated range, or if the phone number has been used for fraudulent activities. 
 
-Should companies verify a customer's phone number? Many companies do not, because email addresses tend to be verified for communications and account/password reset flows. Without verifying customers' phone numbers, one can never be sure that the phone number entered is correct.
+Should companies verify a customer's phone number? Many companies do not, because email addresses tend to be verified for communications and account/password reset flows, and verifying a phone number in addition is seen as too much friction. Without verifying customers' phone numbers, one can never be sure that the phone number entered is correct.
 
 What about cost? Each SMS OTP will incur a cost. Multiplied by the number of unique logins per year, this can end up costing companies tens or hundreds of thousands of dollars.
 
