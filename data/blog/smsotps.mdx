@@ -30,14 +30,14 @@ Should companies/organisations verify a customer's phone number? Many companies/
 
 What about cost? Each SMS OTP will incur a cost. Multiplied by the number of unique logins per year, this can end up costing companies tens or hundreds of thousands of dollars.
 
-What about enabling your SMS provider for overseas phone numbers? Your SMS provider may request you to raise a request for each overseas country to meet the countries' regulatory requirements. Let's not even discuss how SMSs are a best effort service.
+What about enabling your SMS provider for overseas phone numbers? Your SMS provider may request you to raise a request for each overseas country to meet the country's regulatory requirements. Let's not even discuss how SMSs are a best effort service.
 
 ## SMS OTP Implementations
 
 Any SMS OTP implementation also needs to deal with basic security controls:
 - How many unsuccessful OTP attempts are allowed?
 - What does one do if too many attempts are tried? Lock out the authentication factor? Lock the account?
-- Any custom implementation without an IdP must ensure that the password factor, then SMS OTP are sequenced correctly. That is, attackers cannot bypass the password factor and go straight to an SMS OTP.
+- Any custom implementation without an IdP must ensure that the password factor, then SMS OTP are sequenced correctly. That is, attackers cannot bypass the password factor and go straight to an SMS OTP. Engineering must deisgn a solution such that the API receiving the entered OTP is on the public Internet but cannot be used without successfully authenticating with a password.
 
 
 
