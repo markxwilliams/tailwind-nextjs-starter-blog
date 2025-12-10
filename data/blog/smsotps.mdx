@@ -1,11 +1,11 @@
 ---
-title: "SMS OTPs: Bad for Security, Architecture, Operations, and Call Centres"
+title: "SMS OTPs: Bad for Security, Architecture, Engineering, and Call Centres"
 date: "2025-12-10"
 lastmod: "2025-12-10"
 tags:
   - ciam
 draft: false
-summary: "SMS OTPs: Bad for Security, Architecture, Operations, and Call Centres?"
+summary: "SMS OTPs: Bad for Security, Architecture, Engineering, and Call Centres?"
 images:
   - "/static/images/twitter-card.png"
 ---
@@ -14,13 +14,15 @@ images:
 
 Unfortunately SMS OTPs -- and even email OTPs/magic links -- are still common in customer identity. Why? Most companies/organisations collect their customers' phone numbers and/or email addresses, and hence adding an OTP for MFA or step up authentication is relatively simple. Few companies want the high friction of using Google/MS Authenticator or creating their own authentication app, passkeys are still new and complex, and hardware tokens add a huge overhead/cost for both companies/organisations and customers.
 
-The security problems of SMS OTPs are well known: The SS7 network is notoriously insecure, SIM cards can be cloned, mobile phone network retailers can be tricked into issuing new SIM cards, there is no end-to-end encryption of SMSs, mobile phones can be hacked, SMS OTPs aren't phishing resistant authentication factors, and SMS OTPs enable toll fraud attacks. Still, SMS OTPs offer better security than a simple password, and email OTPs are less secure due to the fact that an email account is easier to take over than a mobile phone. Likewise, email OTPs aren't a good idea whereby customers can reset their password by an email magic link, which means that attackers only need to compromise an email account to reset a customer's password, then log in with their password and an email OTP.
+The security problems of SMS OTPs are well known: The SS7 network is notoriously insecure, SIM cards can be cloned, mobile phone network retailers can be tricked into issuing new SIM cards to attackers, there is no end-to-end encryption of SMSs, mobile phones can be hacked, SMS OTPs aren't phishing resistant authentication factors, and SMS OTPs enable toll fraud attacks. Still, SMS OTPs offer better security than a simple password, and email OTPs are less secure due to the fact that an email account is easier to take over than a mobile phone. 
 
-## Architecture, Operations, and Call Centres
+Likewise, email OTPs aren't a good idea whereby customers can reset their password by an email magic link, which means that attackers only need to compromise an email account to reset a customer's password, then log in with their password and an email OTP.
+
+## Architecture, Engineering, and Call Centres
 
 There are other problems with SMS OTPs, too. Architecturally, companies/organisation require a means by which phone numbers are included in a customer's profile when provisioning a customer into an IdP. The phone number must also be enabled as an authentication factor. But what if a customer changes their phone number? Then companies/organisations require a means by which a customer's phone number can be updated in the IdP, by self service (e.g., in a mobile app) or by the call centre. 
 
-Typically changing a customer's phone number requires APIs and integration with the IdP/CRM. What if some customers don't have a phone number? Now one must decide if the customer is provisioned, can fall back to an email OTP, or can simply add their mobile phone after successfully authenticating with a password... and the company/organisation's CRM is updated with the phone number. 
+Typically changing a customer's phone number requires APIs and integration with the IdP/CRM. What if some customers don't have a phone number? Now one must decide if the customer is provisioned, can fall back to an email OTP, or can simply add their mobile phone after successfully authenticating with a password... and the company/organisation's CRM is updated with the phone number. Moreover, call centres also need identity verification systems and processes to prevent attackers from updating a customer's phone number, then logging in as the customer.
 
 Many IdPs -- e.g., Okta, Auth0 -- will require that the phone number is in the E.164 format. Your CRM should also include data integrity rules around the length and composition of the phone number. Likewise, some IdPs will even reject a phone number being added to a customer's profile is the phone number is not in an allocated range, or if the phone number has been used for fraudulent activities. 
 
