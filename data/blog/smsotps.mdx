@@ -12,7 +12,7 @@ images:
 
 ## Overview
 
-Unfortunately SMS OTPs -- and even email OTPs/magic links -- are still common in customer identity. Why? Most companies/organisations collect their customers' phone numbers and/or email addresses, and hence adding an OTP for MFA or step up authentication is relatively simple. Few companies want the high friction of using Google/MS Authenticator or creating their own authentication app, passkeys are still new and complex, and hardware tokens add a huge overhead/cost for both companies/organisations and customers.
+Unfortunately SMS OTPs -- and even email OTPs/magic links -- are still common in customer identity. Why? Most companies collect their customers' phone numbers and/or email addresses, and hence adding an OTP for MFA or step up authentication is relatively simple. Few companies want the high friction of using Google/MS Authenticator or creating their own authentication app, passkeys are still new and complex, and hardware tokens add a huge overhead/cost for both companies and customers.
 
 The security problems of SMS OTPs are well known: The SS7 network is notoriously insecure, SIM cards can be cloned, mobile phone network retailers can be tricked into issuing new SIM cards to attackers, there is no end-to-end encryption of SMSs, mobile phones can be hacked, SMS OTPs aren't phishing resistant authentication factors, and SMS OTPs enable toll fraud attacks. Still, SMS OTPs offer better security than a simple password, and email OTPs are less secure due to the fact that an email account is easier to take over than a mobile phone. 
 
@@ -20,13 +20,13 @@ Likewise, email OTPs aren't a good idea whereby customers can reset their passwo
 
 ## Architecture, Engineering, and Call Centres
 
-There are other problems with SMS OTPs, too. Architecturally, companies/organisation require a means by which phone numbers are included in a customer's profile when provisioning a customer into an IdP. The phone number must also be enabled as an authentication factor. But what if a customer changes their phone number? Then companies/organisations require a means by which a customer's phone number can be updated in the IdP, by self service (e.g., in a mobile app) or by the call centre. 
+There are other problems with SMS OTPs, too. Architecturally, companies require a means by which phone numbers are included in a customer's profile when provisioning a customer into an IdP. The phone number must also be enabled as an authentication factor. But what if a customer changes their phone number? Then companies require a means by which a customer's phone number can be updated in the IdP, by self service (e.g., in a mobile app) or by the call centre. 
 
-Typically changing a customer's phone number requires APIs and integration with the IdP/CRM. What if some customers don't have a phone number? Now one must decide if the customer is provisioned, can fall back to an email OTP, or can simply add their mobile phone after successfully authenticating with a password... and the company/organisation's CRM is updated with the phone number. Moreover, call centres also need identity verification systems and processes to prevent attackers from updating a customer's phone number, then logging in as the customer.
+Typically changing a customer's phone number requires APIs and integration with the IdP/CRM. What if some customers don't have a phone number? Now one must decide if the customer is provisioned, can fall back to an email OTP, or can simply add their mobile phone after successfully authenticating with a password... and the company's CRM is updated with the phone number. Moreover, call centres also need identity verification systems and processes to prevent attackers from updating a customer's phone number, then logging in as the customer.
 
 Many IdPs -- e.g., Okta, Auth0 -- will require that the phone number is in the E.164 format. Your CRM should also include data integrity rules around the length and composition of the phone number. Likewise, some IdPs will even reject a phone number being added to a customer's profile is the phone number is not in an allocated range, or if the phone number has been used for fraudulent activities. 
 
-Should companies/organisations verify a customer's phone number? Many companies/organisations do not, because email addresses tend to be verified for communications and account/password reset flows. Without verifying customers' phone numbers, one can never be sure that the phone number entered is correct.
+Should companies verify a customer's phone number? Many companies do not, because email addresses tend to be verified for communications and account/password reset flows. Without verifying customers' phone numbers, one can never be sure that the phone number entered is correct.
 
 What about cost? Each SMS OTP will incur a cost. Multiplied by the number of unique logins per year, this can end up costing companies tens or hundreds of thousands of dollars.
 
