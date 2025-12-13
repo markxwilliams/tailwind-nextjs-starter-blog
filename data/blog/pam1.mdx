@@ -12,10 +12,35 @@ images:
 
 ## Introduction
 
-You're a security/solution/domain/program architect who's been given a PAM project. Now what? These next few blog posts aim to answer that question based on my experience. I will walk through how to structure PAM capabilities, functional requirements, current state architecture, reference architecture, vendor selection, and the solution architecture/design of your chosen PAM solution.
+You're a security/solution/domain/program architect who's been given a PAM project. Now what? These next few blog posts aim to answer that question based on my experience. I will walk through how to structure PAM capabilities, functional requirements, current state architecture, reference architecture, vendor selection, key decisons, and the solution architecture/design of your chosen PAM solution.
 
 > [!NOTE]
 > This blog won't go into mapping business objectives to business/technical capabilities. It's assumed that your PAM project is funded, has its business objectives defined, and you're wondering about the next steos.
+
+## Basic PAM Capabilities
+
+Let's answer two questions at once: What are basic PAM capabilities? And does Entra PIM meet those capabilities? I've added the latter question because PAM projects may need to justify why they're not using existing capabilities, and many organisations using Microsoft 365 will have Entra PIM licenses. Simnilar logic will work for a custom solution or basic password safe (e.g., LastPass). 
+
+Here's a list of basic PAM capabilities:
+- **Vaulting credentials**. This is basic password safe functioanlity that allows privileged users to check out credentials from a safe. Credentials can be automatically rotated either after being used or on a schedule for a target system. 
+- **Privileged session brokering**. This capability allows privileged users to log in to a target system without entering -- or even knowing -- a credential. The PAM solution acts as a broker/proxy between the privileged user and the target system, thereby allowing the PAM solution to use a vaulted credential to log in the privileged user. The vaulted credential never touches the privileged user's enduser device. 
+- **Privileged account discovery**. Enables privileged accounts to be discovered and automatically on boarded to the PAM solution. 
+- **Privileged session recording and monitoring**. Enables recording and monitoring of privileged sesssions. Privileged sessions can be either screenshot or recorded to a safe. 
+
+Which PAM capabilities does Enta PIM offer?
+- **Just-in-time, time bound privileged access**. [Privileged users](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure) must request access to specific roles for Microsoft Entra ID and Azure resources. Privileged users must know the credential for the account requesting access, and, once the role is assigned, the privileged credential is exposed to the privileged user's enduser device. 
+
+There are no vaulted credentials, no privileged session brokering, no privileged account discovery, and no privileged session recording and monitoring. Likewise, Entra PIM does not scale beyond Microsoft's cloud-based offerings:
+- **Active Directory / Domain-joined servers**. There's a number of ways that Entra PIM can be used to write back group memnbership to AD. However, the main supported method takes up to [20 minuites](https://learn.microsoft.com/en-us/entra/identity/hybrid/group-writeback-cloud-sync) to assign a user to a group.
+- **SaaS platforms**. [PIM for Groups](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups) takes between 2-10 minutes to assign a user to a group. Assuming that a SaaS platform has an enterprise application set up for user provisioning and SSO, PIM for Groups would only deprovision users if SCIM was used, and even then you're outsourcing your security to a vendor's SCIM implementation. If JIT is used, then the user is never deprovisioned after the first time a user is assiged to a group, making PIM for Groups useless/pointless. If your authorisation model is defined in the SaaS platform instead of neatly mapping Entra groups to SaaS roles, then an administrator would need to assign you access after each time that PIM for Groups assign you to a group, again making PIM for Groups useless.
+
+Based on the above restrictions, it should be possible to argue against Entra PIM or a custom solution and in favour of a PAM solution. 
+
+
+
+
+
+
 
 
 
