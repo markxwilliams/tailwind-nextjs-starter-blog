@@ -36,7 +36,7 @@ What about enabling your SMS provider for overseas phone numbers? Your SMS provi
 
 Any SMS OTP implementation also needs to deal with basic security controls:
 - How many unsuccessful OTP attempts are allowed?
-- What does one do if too many attempts are tried? Lock out the authentication factor? Lock the account?
+- What does one do if there are tioo many attempts at enter an SMS OTP? Lock out the authentication factor? Lock out the account?
 - Any custom implementation without an IdP must ensure that the password factor, then SMS OTP are sequenced correctly. That is, attackers cannot bypass the password factor and go straight to an SMS OTP. Engineering must deisgn a solution such that the API receiving the entered OTP is on the public Internet but cannot be used without successfully authenticating with a password.
 
 
