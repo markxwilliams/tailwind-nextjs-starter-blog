@@ -12,12 +12,15 @@ images:
 
 ## Introduction
 
-You're a security/solution/domain/program architect who's been given a PAM project. Now what? These next few blog posts aim to answer that question based on my experience. I will walk through how to structure PAM capabilities, functional requirements, current state architecture, reference architecture, vendor selection, key decisons, and the solution architecture/design of your chosen PAM solution.
-
 > [!NOTE]
 > This blog won't go into mapping business objectives to business/technical capabilities. It's assumed that your PAM project is funded, has its business objectives defined, and you're wondering about the next steos.
 
+You're a security/solution/domain/program architect who's been given a PAM project. Now what? These next few blog posts aim to answer that question based on my experience. I will walk through how to structure PAM capabilities, functional requirements, current state architecture, reference architecture, vendor selection, key decisons, and the solution architecture/design of your chosen PAM solution.
+
 ## Business/Technical Capability Models
+
+> [!NOTE]
+> The exact domains, subdomains, capbilities, etc. will vary from company to company, model to model. What's important is listing all PAM capbilities and the associated SBBs and ABBs to understand what your existing capabilities are, and, more important, where your capability gaps lie. Capability gaps can be used to show shortcomings of existing solutions. 
 
 There's plenty of inforomation on capabiity models on the Internet. PAM as a capability sits within workforce identity, which, in turn, sits within the IAM subdomain of the overall security domain. 
 
@@ -26,9 +29,6 @@ What does this mean? It mens that PAM's capabilities sit within the wider workfo
 ### IAM Subdomain of the Security Domain
 
 Below is a shortened example of a workforce identity capability model that sits inside the IAM subdomain. The exact layers of the capability model are quite flexible. For example, you may see "vaulting credentials" as part of "privileged session brokering", in which case another L3 layer can be added. 
-
-> [!NOTE]
-> The exact domains, subdomains, capbilities, etc. will vary from company to company, model to model. What's important is listing all PAM capbilities and the associated SBB and ABBs to understand what your existing capabilities are, and, more important, where your capability gaps lie. Capability gaps can be used to show the shortcomings of existing solutions. 
 
 | **L1 Capability**              | **L2 Capability**                 | **ABB**                        | **SBB**       |
 |--------------------------------|-----------------------------------|--------------------------------|---------------|
