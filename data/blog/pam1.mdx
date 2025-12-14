@@ -17,9 +17,34 @@ You're a security/solution/domain/program architect who's been given a PAM proje
 > [!NOTE]
 > This blog won't go into mapping business objectives to business/technical capabilities. It's assumed that your PAM project is funded, has its business objectives defined, and you're wondering about the next steos.
 
+## Business/Technical Capability Models
+
+There's plenty of inforomation on capabiity models on the Internet. PAM as a capability sits within workforce identity, which, in turn, sits within the IAM subdomain of the overall security domain. 
+
+What does this mean? It mens that PAM's capabilities sit within the wider workforce identity capabilities, such as IGA, authentication, authorisation, and ITDR.
+
+### IAM Subdomain of the Security Domain
+
+Below is a shortened example of a workforce identity capability model that sits inside the IAM subdomain. The exact layers of the capability model are quite flexible. For example, you may see "vaulting credentials" as part of "privileged session brokering", in which case another L3 layer can be added. 
+
+> [!NOTE]
+> The exact domains, subdomains, capbilities, etc. will vary from company to company, model to model. What's important is listing all PAM capbilities and the associated SBB and ABBs to understand what your existing capabilities are, and, more important, where your capability gaps lie. Capability gaps can be used to show the shortcomings of existing solutions. 
+
+| **L1 Capability**              | **L2 Capability**                 | **ABB**                        | **SBB**       |
+|--------------------------------|-----------------------------------|--------------------------------|---------------|
+| **Identity, Governance, and Administration**                        |  Identity Lifecycle Management    | IGA                            | SailPoint ISC |
+|                                | ...                               | ...                            | ...           |                       
+| **Authentication**             |  Federated Authentication         | SSO                            | Entra ID      |
+|                                | ...                               | ...                            | ...           |
+| **Privileged Access Management** | Vaulting credentials            | PAM                            | BeyondTrust   |
+|                                | Privileged session brokering      | PAM                            | N/A           |
+|                                | Privileged session recording and monitoring   | PAM                           | N/A           |
+|                                | ...                               | ...                            | ...           |
+|  ...                           | ...                               | ...                            | ...           |
+
 ## Basic PAM Capabilities
 
-Let's answer two questions at once: What are basic PAM capabilities? And does Entra PIM meet those capabilities? I've added the latter question because PAM projects may need to justify why they're not using existing capabilities, and many organisations using Microsoft 365 will have Entra PIM licenses. Simnilar logic will work for a custom solution or basic password safe (e.g., LastPass). 
+Let's answer two questions at once: What are basic PAM capabilities? And does Entra PIM meet those capabilities? I've added the latter question because PAM projects may need to justify why they're not using existing capabilities, and many organisations using Microsoft 365 will have Entra PIM licenses. Similar logic will work for a custom solution or basic password safe (e.g., LastPass). 
 
 Here's a list of basic PAM capabilities:
 - **Vaulting credentials**. This is basic password safe functioanlity that allows privileged users to check out credentials from a safe. Credentials can be automatically rotated either after being used or on a schedule for a target system. 
@@ -35,11 +60,15 @@ There are no vaulted credentials, no privileged session brokering, no privileged
 - **SaaS platforms**. [PIM for Groups](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups) takes between 2-10 minutes to assign a user to a group. Assuming that a SaaS platform has an enterprise application set up for user provisioning and SSO, PIM for Groups would only deprovision users if SCIM was used, and even then you're outsourcing your security to a vendor's SCIM implementation. If JIT is used, then the user is never deprovisioned after the first time a user is assiged to a group, making PIM for Groups useless/pointless. If your authorisation model is defined in the SaaS platform instead of neatly mapping Entra groups to SaaS roles, then an administrator would need to assign you access after each time that PIM for Groups assign you to a group, again making PIM for Groups useless.
 - **Various other systems**. Entra PIM does not support Windows/Linux servers, databases, containers, iDRACs, etc. 
 
-Based on the above restrictions, it should be possible to argue against Entra PIM or a custom solution and in favour of a PAM solution. 
+Based on the above restrictions, it should be possible to argue against Entra PIM or a custom solution and in favour of a PAM solution. Both Entra PIM and custom solutions will also lack basic PAM capabilities.
 
 ## Advanced PAM Capabilities
 
 ## Underpinning Capabilities for PAM
+
+PAM is not an isolated solution. You're going to be building on your existing IAM architecture, and hence it's important to understand how your existing IAM architecture will impact your PAM solution and vice versa. 
+
+
 
 
 
